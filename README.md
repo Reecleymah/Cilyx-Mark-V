@@ -2,9 +2,10 @@
 ## Fuente de Alimentación Adaptable para Protoboard
 
 ### Introducción
-Este proyecto tiene como objetivo construir una fuente de alimentación adaptable para protoboard, de tamaño compacto y fácilmente transportable. Este dispositivo permite seleccionar entre varios niveles de voltaje de salida, como 3.3V, 5V, 12V y un voltaje variable que oscila entre 1V y 11V. Es ideal para proyectos electrónicos donde se necesite una fuente de alimentación flexible y portátil.
+Este proyecto tiene como objetivo construir una fuente de alimentación adaptable para protoboard, de tamaño compacto y fácilmente transportable. Este dispositivo permite seleccionar entre varios niveles de voltaje de salida, como 3.3V, 5V, 12V y un voltaje variable que oscila entre 1V y 11V.
 
-### Especificaciones Técnicas
+### Especificaciones Técnicas [Que queremos]
+
 - **Tensión de alimentación**: 5V & 12V DC
 - **Corriente de salida**: 1A
 - **Voltajes de salida fijos**: 3.3V, 5V, 12V DC
@@ -29,14 +30,14 @@ A continuación, se detalla el esquema del circuito con los componentes principa
 | **C1, C2, C5**       | Capacitor cerámico 0.1µF (Paquete 1206)        |
 | **C3, C4, C6**       | Capacitor electrolítico 10µF 16V               |
 
-### Descargar Diseño
+<!-- ### Descargar Diseño-->
 
-- **Diseño Esquemático en Proteus 8.9**: [Descargar aquí](#) <!-- Inserta el enlace adecuado -->
-- **Diseño de la Tarjeta PCB**: [Ordena ahora en JLCPCB](https://jlcpcb.com) <!-- Inserta el enlace adecuado -->
+<!-- - **Diseño Esquemático en Proteus 8.9**: [Descargar aquí](#) <!-- Inserta el enlace adecuado -->
+<!-- - **Diseño de la Tarjeta PCB**: [Ordena ahora en JLCPCB](https://jlcpcb.com) <!-- Inserta el enlace adecuado -->
 
-### Instrucciones de Uso
-1. Conecta la fuente de alimentación a una entrada de 5V o 12V, dependiendo de los requerimientos de tu proyecto.
-2. Elige el nivel de voltaje adecuado para tu circuito (3.3V, 5V, 12V o un voltaje variable entre 1V y 11V).
+### Instrucciones de Uso [Segun lo que tengo en la mente]
+1. Conectar la fuente de alimentación a una entrada de 5V o 12V, dependiendo de los requerimientos de tu proyecto.
+2. Elige el nivel de voltaje adecuado para tu circuito (3.3V, 5V, 12V o un voltaje variable entre 1V y 11V) mediante switches.
 3. Monta los componentes en la protoboard y conéctalos a la salida de la fuente de alimentación para verificar el correcto funcionamiento del circuito.
 
 ### Notas adicionales
