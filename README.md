@@ -30,10 +30,6 @@ A continuación, se detalla el esquema del circuito con los componentes principa
 | **C1, C2, C5**       | Capacitor cerámico 0.1µF (Paquete 1206)        |
 | **C3, C4, C6**       | Capacitor electrolítico 10µF 16V               |
 
-<!-- ### Descargar Diseño-->
-
-<!-- - **Diseño Esquemático en Proteus 8.9**: [Descargar aquí](#) <!-- Inserta el enlace adecuado -->
-<!-- - **Diseño de la Tarjeta PCB**: [Ordena ahora en JLCPCB](https://jlcpcb.com) <!-- Inserta el enlace adecuado -->
 
 ### Instrucciones de Uso [Segun lo que tengo en la mente]
 1. Conectar la fuente de alimentación a una entrada de 5V o 12V, dependiendo de los requerimientos de tu proyecto.
@@ -41,4 +37,4 @@ A continuación, se detalla el esquema del circuito con los componentes principa
 3. Monta los componentes en la protoboard y conéctalos a la salida de la fuente de alimentación para verificar el correcto funcionamiento del circuito.
 
 ### Notas adicionales
-Este diseño es ideal para proyectos pequeños donde se requiere movilidad y flexibilidad en los niveles de voltaje, evitando el uso de fuentes de alimentación grandes y poco portátiles.
+Este diseño es ideal para proyectos pequeños donde se requiere movilidad y flexibilidad en los niveles de voltaje, evitando el uso de fuentes de alimentación grandes y poco portátiles. Ademas los componentes puedne cambiar pero es para hacernos a la idea de que ocupamos, por ejemplo lo tipos de led pueden ser de los normales, etc.
