@@ -1,40 +1,58 @@
-# CILYX-Mark-V
-## Fuente de Alimentación Adaptable para Protoboard
+# Cilyx MK-V
+## Proyecto: Generador de Señales de Reloj y PWM con NE555
 
-### Introducción
-Este proyecto tiene como objetivo construir una fuente de alimentación adaptable para protoboard, de tamaño compacto y fácilmente transportable. Este dispositivo permite seleccionar entre varios niveles de voltaje de salida, como 3.3V, 5V, 12V y un voltaje variable que oscila entre 1V y 11V.
+Este proyecto consiste en la implementación de un generador de señales de reloj y PWM utilizando el temporizador **NE555**. El circuito permite cambiar entre diferentes rangos de frecuencia y ajustar la frecuencia de salida mediante un potenciómetro. Esto lo hace ideal para la enseñanza y práctica de temas relacionados con sistemas digitales, donde las señales de reloj y PWM son esenciales.
 
-### Especificaciones Técnicas [Que queremos]
+## Objetivo del Proyecto
+Desarrollar una tarjeta PCB que sirva como una herramienta educativa para estudiantes de sistemas digitales. La tarjeta permitirá generar señales de reloj ajustables y experimentar con distintos rangos de frecuencia. Además, se proporciona una visualización de la señal a través de LEDs, lo que ayuda a entender la relación entre frecuencia y tiempo de encendido/apagado.
 
-- **Tensión de alimentación**: 5V & 12V DC
-- **Corriente de salida**: 1A
-- **Voltajes de salida fijos**: 3.3V, 5V, 12V DC
-- **Voltaje de salida variable**: 1 – 11V DC
+## Listado de Componentes
 
-### Esquemático Electrónico
-A continuación, se detalla el esquema del circuito con los componentes principales:
+| Componente        | Valor               | Cantidad | Descripción                                                                 |
+|-------------------|---------------------|----------|-----------------------------------------------------------------------------|
+| NE555             | -                   | 1        | Temporizador configurado en modo astable para generar la señal de salida.   |
+| Resistencia       | 1kΩ                 | 1        | Limita la corriente al LED de encendido.                                    |
+| Resistencia       | 330Ω                | 1        | Limita la corriente al LED de señal.                                        |
+| Resistencia       | 2.7kΩ               | 1        | Parte del ajuste de la frecuencia del NE555.                                |
+| Resistencia       | 47kΩ                | 1        | Parte del ajuste de la frecuencia del NE555.                                |
+| Potenciómetro     | 500kΩ               | 1        | Permite ajustar la frecuencia de salida dentro del rango seleccionado.      |
+| Condensador       | 100 nF, 10 nF, 1 nF | 1 c/u    | Define el rango de frecuencia junto al interruptor.                         |
+| Condensador       | 10 nF               | 1        | Filtra la señal de alimentación del NE555.                                  |
+| LED               | -                   | 2        | Uno para indicar encendido y otro para visualizar la señal de salida.       |
+| Interruptor       | 1P3T (3 posiciones) | 1        | Cambia entre los rangos de frecuencia usando diferentes condensadores.      |
+| Fuente de Alimentación | 5V            | 1        | Suministra voltaje al circuito.                                             |
 
-| Componente           | Descripción                                    |
-|----------------------|------------------------------------------------|
-| **U1**               | Regulador de voltaje SMD (AMS 1117-3.3) - 3.3V |
-| **U2**               | Regulador de voltaje SMD (AMS 1117-5.0) - 5.0V |
-| **J1**               | Jack USB 2 Tipo B                              |
-| **J2**               | Borneras de conexión 2 pines                   |
-| **J3**               | Jack power 12V                                 |
-| **J4, J8**           | Pines espadines Macho                          |
-| **D1**               | Diodo Schottky SS14-T                          |
-| **D2-D5**            | LED verde SMD (Paquete 1206)                   |
-| **R1, R2, R5-R6**    | Resistencia SMD 1/4W 1k Ohm (Paquete 1206)     |
-| **R3-R4**            | Resistencia SMD 1/4W 330 Ohm (Paquete 1206)    |
-| **RV1**              | Potenciómetro de precisión                     |
-| **C1, C2, C5**       | Capacitor cerámico 0.1µF (Paquete 1206)        |
-| **C3, C4, C6**       | Capacitor electrolítico 10µF 16V               |
+## Funcionamiento del Circuito
 
+1. **Configuración Astable del NE555**:
+   - El temporizador NE555 está configurado en modo astable para generar una señal de onda cuadrada continua en su pin de salida (pin 3).
+   - La frecuencia de la señal de salida se determina mediante los valores de las resistencias y los condensadores conectados al NE555.
+   - Los valores de las resistencias y el condensador principal en la configuración astable afectan directamente la frecuencia y el duty cycle de la señal.
 
-### Instrucciones de Uso [Segun lo que tengo en la mente]
-1. Conectar la fuente de alimentación a una entrada de 5V o 12V, dependiendo de los requerimientos de tu proyecto.
-2. Elige el nivel de voltaje adecuado para tu circuito (3.3V, 5V, 12V o un voltaje variable entre 1V y 11V) mediante switches.
-3. Monta los componentes en la protoboard y conéctalos a la salida de la fuente de alimentación para verificar el correcto funcionamiento del circuito.
+2. **Selección de Rango de Frecuencia**:
+   - El interruptor de 3 posiciones permite cambiar entre tres condensadores de diferentes valores (100 nF, 10 nF y 1 nF), lo cual ajusta el rango de frecuencia de la señal:
+     - **100 nF (Posición A)**: Rango de frecuencia de 10 Hz a ~130 Hz.
+     - **10 nF (Posición B)**: Rango de frecuencia de 130 Hz a ~1 kHz.
+     - **1 nF (Posición C)**: Rango de frecuencia de 1 kHz a ~10 kHz.
+   - El usuario puede seleccionar el rango deseado para su experimento.
 
-### Notas adicionales
-Este diseño es ideal para proyectos pequeños donde se requiere movilidad y flexibilidad en los niveles de voltaje, evitando el uso de fuentes de alimentación grandes y poco portátiles. Ademas los componentes puedne cambiar pero es para hacernos a la idea de que ocupamos, por ejemplo lo tipos de led pueden ser de los normales, etc.
+3. **Ajuste Fino de Frecuencia**:
+   - Un potenciómetro de 500kΩ permite ajustar la frecuencia de salida dentro del rango seleccionado, proporcionando una señal de reloj de frecuencia variable.
+   - Este ajuste fino es ideal para observar el efecto de diferentes frecuencias en sistemas digitales, como contadores o flip-flops.
+
+4. **Visualización de la Señal**:
+   - Un LED de señal (con una resistencia limitadora de 330Ω) está conectado a la salida del NE555 y parpadea según la frecuencia generada. Esto permite una visualización rápida de la señal sin necesidad de un osciloscopio.
+   - Además, se incluye un LED de encendido (con una resistencia de 1kΩ) para indicar que el circuito está en funcionamiento.
+
+## Funcionamiento Previsto
+El circuito generará una señal de reloj con frecuencia ajustable, útil para sistemas digitales. Cambiando la posición del interruptor, el usuario puede seleccionar el rango de frecuencia deseado. El potenciómetro permite hacer ajustes finos dentro de ese rango, y el LED de señal permite una verificación visual de la salida. Este diseño facilita la comprensión de conceptos de frecuencia y duty cycle, así como la relación entre frecuencia y temporización en circuitos digitales.
+
+El circuito puede emplearse para:
+- **Sincronización de Circuitos Digitales**: Proveer una señal de reloj a contadores, flip-flops o microcontroladores.
+- **Generación de PWM Básico**: Con pequeños ajustes en los valores de resistencia, también puede utilizarse para generar una señal de PWM simple.
+- **Aprendizaje Práctico**: Ideal para estudiantes de electrónica y sistemas digitales para experimentar con señales de temporización.
+
+---
+
+Este proyecto proporciona una base sólida para la enseñanza de conceptos de temporización y señales en sistemas digitales. Además, es una herramienta útil en un laboratorio de electrónica donde los estudiantes pueden explorar de manera práctica los principios de la frecuencia y el duty cycle.
+
